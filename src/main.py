@@ -30,11 +30,17 @@ def handle_user_input(agent_executor, msgs):
         # xu ly va hien thi cau tra loi
         with st.chat_message("assistant"):
             st_callback = StreamlitCallbackHandler(st.container(), key="assistant")
-            # lay lich su chat
-            chat_history = [
-                {"role": msgs["role"], "content": msgs["content"]}
-                for msgs in st.session_state.chat_history[:1]
-            ]
+            # goi AI 
+            response = agent_executor.invoke(
+                {"input": prompt,
+                 "chat_history": st.session_state.chat_history},
+                callbacks=[st_callback],
+            )
+            # hien thi cau tra loi
+            output = response["output"]
+            st.session_state.chat_history.append({"role": "assistant", "content": output})
+            msgs.add_ai_message(output)
+            st.write(output)    
 def setup_page():
     st.set_page_config(page_title="ChatGPT", page_icon=":robot:", layout="wide")
     st.title("ChatGPT with Langchain")
