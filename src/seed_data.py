@@ -15,7 +15,7 @@ def seed_milvus(url: str, collection_name: str, json_file: str, data_dir:str)->M
         embedding_function=embeddings,
         collection_name=collection_name,
         url=url,
-        drop_old=True,# xoa bo collection cu
+        drop_old=True,
     )
     vectorstore.add_documents(documents, ids=uuids)
     print('vectorstore', vectorstore)
@@ -31,7 +31,7 @@ def seed_milvus_live(url: str, collection_name: str, json_file: str, data_dir:st
         embedding_function=embeddings,
         collection_name=collection_name,
         url=url,
-        drop_old=True,# xoa bo collection cu
+        drop_old=True,
     )
     vectorstore.add_documents(documents, ids=uuids)
     print('vectorstore', vectorstore)

@@ -6,7 +6,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
-load_dotenv()
+load_to_env()
 def bs4_extractor(html: str) -> str:
     """
     Hàm trích xuất và làm sạch nội dung từ HTML
