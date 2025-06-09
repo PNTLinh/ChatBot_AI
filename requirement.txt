@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 streamlit==1.28.0
 langchain==0.0.339
 langchain-google-genai==0.0.7
@@ -8,3 +9,13 @@ python-dotenv==1.0.0
 pandas==2.1.1
 numpy==1.26.0
 pydantic==2.4.2
+=======
+numpy
+faiss-cpu
+langchain-community
+langchain-google-genai
+sentence-transformers==2.2.2
+torchvision==0.21.0
+streamlit
+pyngrok
+>>>>>>> e10216675b09a9e6e5fe87885184f76e4f60b7a1

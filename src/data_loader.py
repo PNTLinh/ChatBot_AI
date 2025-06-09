@@ -16,6 +16,10 @@ def load_procedures(path: str) -> Tuple[List[str], List[Dict]]:
         title   = item.get("title", "").strip()
         content = item.get("content", "").strip()
 
+<<<<<<< HEAD
+=======
+        # Ghép title và content để embed; nếu không cần có thể chỉ lấy content
+>>>>>>> e10216675b09a9e6e5fe87885184f76e4f60b7a1
         text = f"{title}\n\n{content}" if title else content
         docs.append(text)
 
